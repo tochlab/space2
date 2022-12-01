@@ -2,7 +2,6 @@
 
 #include <SDL2/SDL.h>
 
-#include "vector3d.h"
 #include "utils.h"
 #include "Sol.h"
 #include "starsystem.h"
@@ -30,8 +29,11 @@ void process_input() {
     }
 }
 
-
 int main() {
+    SpaceObject solarSystem[] = {
+            Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptunus, Pluto
+    };
+
     if(render_init() != 0) {
         return EXIT_FAILURE;
     }
@@ -61,6 +63,7 @@ int main() {
             end_time_mks = time_now_mks();
             int64_t time_mks = end_time_mks - start_time_mks;
             printf("%ld Avgitertime %ld mks\n", total_iters, time_mks/i);
+            printf("scale %f zoom %f\n", get_scale(), get_zoom());
             i = 0;
             start_time_mks = end_time_mks;
         }

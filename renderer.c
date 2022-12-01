@@ -8,7 +8,11 @@ SDL_Window *window;
 
 const int WindowWidth = 1280;
 const int WindowHeight = 1024;
-double zoom = 16;
+static double zoom = 16;
+
+double get_zoom() {
+    return zoom;
+}
 
 double get_scale() {
     return AstroUnitM / zoom;
@@ -22,7 +26,7 @@ void zoom_dec() {
     zoom *= 2;
 }
 
-void sysobject_draw(Vector3D pos, size_t idx) {
+void sysobject_draw(Vector3D pos) {
     SDL_RenderDrawPointF(renderer, (pos.X / get_scale()) + (WindowWidth / 2), (pos.Y / get_scale()) + (WindowHeight / 2));
 }
 
@@ -47,7 +51,7 @@ void system_render(SystemObjects *ss) {
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
     for(size_t idx = 0;idx<ss->count;idx++) {
-        sysobject_draw(ss->positions[idx], -1);
+        sysobject_draw(ss->positions[idx]);
     }
 
     SDL_RenderPresent(renderer);

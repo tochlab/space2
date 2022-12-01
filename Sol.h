@@ -17,10 +17,10 @@ typedef struct {
 static const double AstroUnitM = 149597870700;
 static const double EarthMassKg = 5.974E24;
 
-static SpaceObject Body = {
-        1, {6378.1 * 1000, 0, 0}, {0, 0, 0}, {0, 0, 0},
-        1
-};
+//static SpaceObject Body = {
+//        1, {6378.1 * 1000, 0, 0}, {0, 0, 0}, {0, 0, 0},
+//        1
+//};
 
 static const SpaceObject Sun = {
         0, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, 1.98892E30
@@ -60,10 +60,6 @@ static const SpaceObject Neptunus = {
 
 static const SpaceObject Pluto = {
         9, {39.48211675 * AstroUnitM, 0, 0}, {0, 4660, 0}, {}, 0.002 * EarthMassKg
-};
-
-static SpaceObject solarSystem[] = {
-        Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptunus, Pluto
 };
 
 #endif //SPACE_SOL_H
