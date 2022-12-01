@@ -14,55 +14,55 @@ typedef struct {
     double massKg;
 } SpaceObject;
 
-const double AstroUnitM = 149597870700;
-const double EarthMassKg = 5.974E24;
+static const double AstroUnitM = 149597870700;
+static const double EarthMassKg = 5.974E24;
 
-SpaceObject Body = {
+static SpaceObject Body = {
         1, {6378.1 * 1000, 0, 0}, {0, 0, 0}, {0, 0, 0},
         1
 };
 
-const SpaceObject Sun = {
+static const SpaceObject Sun = {
         0, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, 1.98892E30
 };
 
-const SpaceObject Mercury = {
+static const SpaceObject Mercury = {
         1, {0.4 * AstroUnitM, 0, 0}, {0, 47360, 0}, {0, 0, 0}, 0.055 * EarthMassKg
 };
 
-const SpaceObject Venus = {
+static const SpaceObject Venus = {
         2, {0.723332 * AstroUnitM, 0, 0}, {0, 35020, 0}, {}, 0.815 * EarthMassKg
 };
 
-const SpaceObject Earth = {
+static const SpaceObject Earth = {
         3, {AstroUnitM, 0, 0}, {0, 29780, 0}, {0, 0, 0}, 1 * EarthMassKg
 };
 
-const SpaceObject Mars = {
+static const SpaceObject Mars = {
         4, {1.523662 * AstroUnitM, 0, 0}, {0, 24130, 0}, {}, 0.107 * EarthMassKg
 };
 
-const SpaceObject Jupiter = {
+static const SpaceObject Jupiter = {
         5, {5.204267 * AstroUnitM, 0, 0}, {0, 13070, 0}, {}, 317.8 * EarthMassKg
 };
 
-const SpaceObject Saturn = {
+static const SpaceObject Saturn = {
         6, {9.53667594 * AstroUnitM, 0, 0}, {0, 9690, 0}, {}, 95.2 * EarthMassKg
 };
 
-const SpaceObject Uranus = {
+static const SpaceObject Uranus = {
         7, {19.18916464 * AstroUnitM, 0, 0}, {0, 6810, 0}, {}, 14.37 * EarthMassKg
 };
 
-const SpaceObject Neptunus = {
+static const SpaceObject Neptunus = {
         8, {30.06992276 * AstroUnitM, 0, 0}, {0, 5430, 0}, {}, 17.15 * EarthMassKg
 };
 
-const SpaceObject Pluto = {
+static const SpaceObject Pluto = {
         9, {39.48211675 * AstroUnitM, 0, 0}, {0, 4660, 0}, {}, 0.002 * EarthMassKg
 };
 
-SpaceObject solarSystem[] = {
+static SpaceObject solarSystem[] = {
         Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptunus, Pluto
 };
 

@@ -4,5 +4,5 @@ project(space2 C)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_FLAGS "-Wall -Wextra -march=skylake")
 
-add_executable(space2 main.c Sol.h vector3d.h)
+add_executable(space2 main.c Sol.h vector3d.h utils.c utils.h starsystem.c starsystem.h renderer.c renderer.h)
 target_link_libraries(space2 SDL2 m)
