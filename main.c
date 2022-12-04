@@ -11,7 +11,9 @@ bool isRunning = true;
 
 void process_input() {
     SDL_Event event;
-    SDL_PollEvent(&event);
+    if(!SDL_PollEvent(&event)) {
+        return;
+    }
     switch (event.type) {
         case SDL_QUIT:
             isRunning = false;
